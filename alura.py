@@ -21,3 +21,9 @@ class Alura(Funcionario):
 
     def busca_perguntas_sem_resposta(self):
         print('Mostrando perguntas não respondidas do fórum')
+
+class Junior(Alura):
+    pass
+
+class Pleno(Alura, Caelum):
+    pass
