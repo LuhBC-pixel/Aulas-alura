@@ -1,3 +1,8 @@
-url = "pagina?argumentos"
-indice = url.find("?")
-print(url[indice + 1:])
+from ExtratorArgumentosUrl import ExtratorArgumentosUrl
+
+url = "moedaorigem=real&moedadestino=dolar"
+
+argumentosUrl = ExtratorArgumentosUrl(url)
+
+moedaorigem, moedadestino = argumentosUrl.extraiArgumentos()
+print(moedadestino, moedaorigem)
