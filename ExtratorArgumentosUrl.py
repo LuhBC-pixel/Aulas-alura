@@ -2,12 +2,12 @@ class ExtratorArgumentosUrl:
 
     def __init__(self, url):
         if self.urlEhValida(url):
-            self.url = url
+            self.url = url.lower()
         else:
             raise LookupError("Url inválida!")
 
     def urlEhValida(self, url):
-        if url:
+        if url and url.startswith('https://bytebank.com'):
             return True
         else:
             return False
@@ -41,7 +41,7 @@ class ExtratorArgumentosUrl:
         print(self.url)
 
     def extraiValor(self):
-        buscaValor = "valor="
+        buscaValor = "valor=".lower()
         indiceInicialValor = self.encontraIndiceInicial(buscaValor)
         valor = self.url[indiceInicialValor:]
         return valor
