@@ -5,4 +5,9 @@ url = "moedaorigem=real&moedadestino=dolar"
 argumentosUrl = ExtratorArgumentosUrl(url)
 
 moedaorigem, moedadestino = argumentosUrl.extraiArgumentos()
-print(moedadestino, moedaorigem)
+
+valor = argumentosUrl.extraiValor()
+
+print(moedadestino, moedaorigem, valor)
+
+print(argumentosUrl)
