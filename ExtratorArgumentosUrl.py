@@ -14,31 +14,34 @@ class ExtratorArgumentosUrl:
         representacaoString = f'Valor: {self.extraiValor()}\nMoeda Origem: {moedaOrigem}\nMoeda Destino: {moedaDestino}'
         return representacaoString
 
-    def urlEhValida(self, url):
+    def __eq__(self, outraInstancia):
+        return self.url == outraInstancia.url
+
+    @staticmethod
+    def urlEhValida(url):
         if url and url.startswith('https://bytebank.com'):
             return True
         else:
             return False
 
     def extraiArgumentos(self):
-        buscaMoedaOrigem = "moedaorigem".lower()
-        buscaMoedaDestino = "moedadestino".lower()
-
-        indiceInicialMoedaDestino = self.encontraIndiceInicial(buscaMoedaDestino)
-        indiceFinalMoedaDestino = self.url.find("&valor")
+        buscaMoedaOrigem = "moedaorigem=".lower()
+        buscaMoedaDestino = "moedadestino=".lower()
 
         indiceInicialMoedaOrigem = self.encontraIndiceInicial(buscaMoedaOrigem)
         indiceFinalMoedaOrigem = self.url.find("&")
-
         moedaOrigem = self.url[indiceInicialMoedaOrigem:indiceFinalMoedaOrigem]
 
-        if moedaOrigem == "moedadestino" or moedaOrigem == "=moedadestino":
+        if moedaOrigem == "moedadestino":
             self.trocaMoeadaOrigem()
             indiceInicialMoedaOrigem = self.encontraIndiceInicial(buscaMoedaOrigem)
             indiceFinalMoedaOrigem = self.url.find("&")
             moedaOrigem = self.url[indiceInicialMoedaOrigem:indiceFinalMoedaOrigem]
 
+        indiceInicialMoedaDestino = self.encontraIndiceInicial(buscaMoedaDestino)
+        indiceFinalMoedaDestino = self.url.find("&valor")
         moedaDestino = self.url[indiceInicialMoedaDestino: indiceFinalMoedaDestino]
+
         return moedaOrigem, moedaDestino
 
     def encontraIndiceInicial(self, moedaBuscada):
@@ -49,7 +52,8 @@ class ExtratorArgumentosUrl:
         print(self.url)
 
     def extraiValor(self):
-        buscaValor = "valor=".lower()
+        buscaValor = "valor="
         indiceInicialValor = self.encontraIndiceInicial(buscaValor)
         valor = self.url[indiceInicialValor:]
+        
         return valor
