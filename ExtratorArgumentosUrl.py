@@ -32,7 +32,7 @@ class ExtratorArgumentosUrl:
 
         moedaOrigem = self.url[indiceInicialMoedaOrigem:indiceFinalMoedaOrigem]
 
-        if moedaOrigem == "moedadestino":
+        if moedaOrigem == "moedadestino" or moedaOrigem == "=moedadestino":
             self.trocaMoeadaOrigem()
             indiceInicialMoedaOrigem = self.encontraIndiceInicial(buscaMoedaOrigem)
             indiceFinalMoedaOrigem = self.url.find("&")
