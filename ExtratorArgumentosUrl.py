@@ -11,7 +11,7 @@ class ExtratorArgumentosUrl:
 
     def __str__(self):
         moedaOrigem, moedaDestino = self.extraiArgumentos()
-        representacaoString = f'Valor: {self.extraiValor()}\n Moeda Origem: {moedaOrigem}\n Moeda Destino: {moedaDestino}'
+        representacaoString = f'Valor: {self.extraiValor()}\nMoeda Origem: {moedaOrigem}\nMoeda Destino: {moedaDestino}'
         return representacaoString
 
     def urlEhValida(self, url):
