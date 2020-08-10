@@ -1,4 +1,6 @@
-class Conta:
+from abc import ABCMeta, abstractmethod
+
+class Conta(metaclass=ABCMeta):
 
     def __init__(self, codigo):
         self._codigo = codigo
@@ -6,6 +8,10 @@ class Conta:
 
     def deposita(self, valor):
         self._saldo += valor
+
+    @abstractmethod
+    def passa_o_mes(self):
+        pass
 
     def __str__(self):
         return f'[>>Codigo {self._codigo} Saldo {self._saldo} <<]'
@@ -21,3 +27,5 @@ class ContaPoupanca(Conta):
         self._saldo += 1.01
         self._saldo -= 3
         
+class ContaInvestimento(Conta):
+    pass
