@@ -1,5 +1,6 @@
-from operator import attrgetter
+from functools import total_ordering
 
+@total_ordering
 class ContaSalario:
 
     def __init__(self, codigo):
@@ -13,7 +14,10 @@ class ContaSalario:
         return self._codigo == outro._codigo and self._saldo == outro._saldo
 
     def __lt__(self, outro):
-        return self._saldo < outro._saldo
+        if self._saldo != outro._saldo:
+            return self._saldo < outro._saldo
+
+        return self._codigo < outro._codigo
 
     def deposita(self, valor):
         self._saldo += valor
@@ -24,16 +28,32 @@ class ContaSalario:
 class ContaMultiploSalario(ContaSalario):
     pass
 
-conta_do_guilherme = ContaSalario(17)
-conta_do_guilherme.deposita(500)
+# from operator import attrgetter
 
-conta_da_daniela = ContaSalario(3)
-conta_da_daniela.deposita(1000)
+# conta_do_guilherme = ContaSalario(17)
+# conta_do_guilherme.deposita(500)
 
-conta_do_paulo = ContaSalario(133)
-conta_do_paulo.deposita(510)
+# conta_da_daniela = ContaSalario(3)
+# conta_da_daniela.deposita(1000)
 
-contas = [conta_do_guilherme, conta_da_daniela, conta_do_paulo]
+# conta_do_paulo = ContaSalario(133)
+# conta_do_paulo.deposita(510)
 
-for conta in sorted(contas, key=attrgetter("_saldo")):
-    print(conta)
+# contas = [conta_do_guilherme, conta_da_daniela, conta_do_paulo]
+
+# for conta in sorted(contas, key=attrgetter("_saldo")):
+#     print(conta)
+
+# conta_do_guilherme = ContaSalario(17)
+# conta_do_guilherme.deposita(500)
+
+# conta_da_daniela = ContaSalario(3)
+# conta_da_daniela.deposita(500)
+
+# conta_do_paulo = ContaSalario(133)
+# conta_do_paulo.deposita(500)
+
+# contas = [conta_do_guilherme, conta_da_daniela, conta_do_paulo]
+
+# for conta in sorted(contas, key=attrgetter("_saldo", "_codigo")):
+#     print(conta)
