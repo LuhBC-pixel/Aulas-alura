@@ -28,6 +28,8 @@ class ContaSalario:
 class ContaMultiploSalario(ContaSalario):
     pass
 
+''' Nos comentários abaixo, são os exemplos que o professor aplicou na aula'''
+
 # from operator import attrgetter
 
 # conta_do_guilherme = ContaSalario(17)
