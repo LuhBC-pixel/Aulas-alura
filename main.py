@@ -5,7 +5,7 @@
 # print(tamanho_cpf)
 
 # SEGUNDA PARTE
-from cpf import Cpf
+from cpf_cnpj import CpfCnpj
 
 # cpf = 15626987913
 
@@ -53,6 +53,14 @@ from validate_docbr import CPF
 # print(cpf.validate("111.111.111-11"))
 
 # SÉTIMA PARTE
-cpf_um = Cpf("15316264754")
+# cpf_um = Cpf("15316264754")
 
-print(cpf_um)
+# print(cpf_um)
+
+# SÉTIMA PARTE
+from validate_docbr import CNPJ
+
+exemplo_cnpj = "35379838000112"
+# cnpj = CNPJ()
+# print(cnpj.validate(exemplo_cnpj))
+documento = CpfCnpj(exemplo_cnpj, 'cnpj')
