@@ -47,7 +47,12 @@ from cpf import Cpf
 # SEXTA PARTE
 from validate_docbr import CPF
 
-cpf = CPF()
+# cpf = CPF()
 
-print(cpf.validate("012.345.678-90"))
-print(cpf.validate("111.111.111-11"))
+# print(cpf.validate("012.345.678-90"))
+# print(cpf.validate("111.111.111-11"))
+
+# SÉTIMA PARTE
+cpf_um = Cpf("15316264754")
+
+print(cpf_um)
