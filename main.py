@@ -1,66 +1,13 @@
-# PRIMEIRA PARTE
-# cpf = 15626987913
-# cpf = str(cpf)
-# tamanho_cpf = len(cpf)
-# print(tamanho_cpf)
-
-# SEGUNDA PARTE
-from cpf_cnpj import CpfCnpj
-
-# cpf = 15626987913
-
-# objeto_cpf = Cpf(cpf)
-
-# TERCEIRA PARTE
-# cpf = "15616987913"
-#objeto_cpf = Cpf(cpf)
-
-# fatia_um = cpf[:3]
-# fatia_dois = cpf[3:6]
-# fatia_tres = cpf[6:9]
-# fatia_quatro = cpf[9:]
-# print(fatia_um)
-# print(fatia_dois)
-# print(fatia_tres)
-# print(fatia_quatro)
-
-# QUARTA PARTE
-# cpf = "15616987913"
-#objeto_cpf = Cpf(cpf)
-
-# fatia_um = cpf[:3]
-# fatia_dois = cpf[3:6]
-# fatia_tres = cpf[6:9]
-# fatia_quatro = cpf[9:]
-
-# cpf_formatado = f"{fatia_um}.{fatia_dois}.{fatia_tres}-{fatia_quatro}"
-
-# print(cpf_formatado)
-
-# QUINTA PARTE
-
-# cpf= "15398745687"
-# objeto_cpf = Cpf(cpf)
-
-# print(objeto_cpf)
-
-# SEXTA PARTE
-from validate_docbr import CPF
-
-# cpf = CPF()
-
-# print(cpf.validate("012.345.678-90"))
-# print(cpf.validate("111.111.111-11"))
-
-# SÉTIMA PARTE
-# cpf_um = Cpf("15316264754")
-
-# print(cpf_um)
-
-# SÉTIMA PARTE
+from cpf_cnpj import Documento
 from validate_docbr import CNPJ
 
-exemplo_cnpj = "35379838000112"
-# cnpj = CNPJ()
-# print(cnpj.validate(exemplo_cnpj))
-documento = CpfCnpj(exemplo_cnpj, 'cnpj')
+cpf_um = 15316264754
+#print(cpf_um)
+
+#exemplo_cnpj = "35379838000112"
+#exemplo_cpf = "11111111112"
+
+#cnpj = CNPJ()
+#print(cnpj.validate(exemplo_cnpj))
+documento = Documento.cria_documento(cpf_um)
+print(documento)
