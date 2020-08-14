@@ -39,7 +39,15 @@ from cpf import Cpf
 
 # QUINTA PARTE
 
-cpf= "15398745687"
-objeto_cpf = Cpf(cpf)
+# cpf= "15398745687"
+# objeto_cpf = Cpf(cpf)
 
-print(objeto_cpf)
+# print(objeto_cpf)
+
+# SEXTA PARTE
+from validate_docbr import CPF
+
+cpf = CPF()
+
+print(cpf.validate("012.345.678-90"))
+print(cpf.validate("111.111.111-11"))
