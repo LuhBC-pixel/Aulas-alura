@@ -1,3 +1,5 @@
 from datetime import datetime, timedelta
+from datas_br import DatasBr
 
-print(datetime.today())
+hoje = DatasBr()
+print(hoje.tempo_cadastro())
