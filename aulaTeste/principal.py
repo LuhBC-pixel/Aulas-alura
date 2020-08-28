@@ -1,4 +1,4 @@
-from dominio import Usuario, Lance, Leilao, Avaliador
+from Alura.aulaTeste.dominio import Usuario, Lance, Leilao, Avaliador
 
 gui = Usuario('Gui')
 yuri = Usuario('Yuri')
