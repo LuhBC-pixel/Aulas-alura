@@ -1,1 +1,1 @@
-from Alura.aulaTeste.dominio import Usuario, Lance, Leilao, Avaliador
+from aulaTeste.dominio import Usuario, Lance, Leilao, Avaliador

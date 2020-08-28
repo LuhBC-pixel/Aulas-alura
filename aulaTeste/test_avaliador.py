@@ -1,5 +1,5 @@
 from unittest import TestCase
-from dominio import Usuario, Lance, Leilao, Avaliador
+from aulaTeste.dominio import Usuario, Lance, Leilao, Avaliador
 
 class TestAvaliador(TestCase):
     
