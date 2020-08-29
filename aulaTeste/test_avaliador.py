@@ -12,8 +12,8 @@ class TestAvaliador(TestCase):
 
         leilao = Leilao('Celular')
 
-        leilao.lances.append(lance_do_gui)
         leilao.lances.append(lance_do_yuri)
+        leilao.lances.append(lance_do_gui)
 
         avaliador = Avaliador()
         avaliador.avalia(leilao)
