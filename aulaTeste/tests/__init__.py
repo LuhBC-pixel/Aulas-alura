@@ -1,1 +1,1 @@
-from src.leilao.dominio import Usuario, Lance, Leilao
+from aulaTeste.src.leilao.dominio import Usuario, Lance, Leilao
