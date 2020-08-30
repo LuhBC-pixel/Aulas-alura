@@ -1,5 +1,5 @@
 from unittest import TestCase
-from aulaTeste.dominio import Usuario, Lance, Leilao
+from ALURA.aulaTeste.dominio import Usuario, Lance, Leilao
 
 class TestLeilao(TestCase):
 
