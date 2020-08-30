@@ -1,1 +1,0 @@
-from aulaTeste.dominio import Usuario, Lance, Leilao
