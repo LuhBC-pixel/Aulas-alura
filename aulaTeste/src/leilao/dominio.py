@@ -3,6 +3,7 @@ import sys
 class Usuario:
 
     def __init__(self, nome, carteira):
+
         self.__nome = nome
         self.__carteira = carteira
 
