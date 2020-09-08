@@ -1,4 +1,7 @@
-arquivo_contatos = open('dados/contatos.csv', encoding='latin_1')
+try:
+    arquivo_contatos = open('dados/contatos.csv', encoding='latin_1')
 
-for linha in arquivo_contatos:
-    print(linha, end='')
+    for linha in arquivo_contatos:
+        print(linha, end='')
+finally:
+    arquivo_contatos.close()
